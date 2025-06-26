@@ -19,9 +19,9 @@ function Header() {
 
   const dashboardnav = {
     home: "/",
+    applications: "/dashboard/applications",
     listings: "/dashboard/listings",
     "new posting": "/dashboard/create-entry",
-    applications: "/dashboard/applications",
     docs: "https://project-docs-amber.vercel.app/docs/job-submission-portal/listings",
   };
 
