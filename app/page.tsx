@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import ListingTable from "@/app/components/table/ListingTable";
-import Link from "next/link";
 import Loader from "./components/ux/Loader";
 import Search from "./components/form/Search";
 export default function Home() {
