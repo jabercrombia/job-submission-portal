@@ -1,17 +1,19 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { createSupabaseBrowserClient } from "@/lib/supabase-browser";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const router = useRouter();
 
   const pathname = usePathname();
   const parts = pathname.split("/").filter(Boolean);
@@ -29,7 +31,12 @@ function Header() {
     dashboard: "/dashboard/listings",
   };
 
-  const activeNav = dashboard === "dashboard" ? dashboardnav : nav;
+  const handleLogout = async () => {
+    const supabase = createSupabaseBrowserClient();
+    await supabase.auth.signOut();
+    router.push("/login");
+    router.refresh();
+  };
 
   return (
     <header>
@@ -49,14 +56,20 @@ function Header() {
               <Link
                 key={index}
                 href={path}
-                target={label === "docs" ? "_blank" : undefined}
-                rel={label === "docs" ? "noopener noreferrer" : undefined}
                 className="text-white/70 hover:text-white text-xs uppercase tracking-widest transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {label}
               </Link>
             ))}
+            {dashboard === "dashboard" && (
+              <button
+                onClick={handleLogout}
+                className="text-white/70 hover:text-white text-xs uppercase tracking-widest transition-colors text-left"
+              >
+                Sign out
+              </button>
+            )}
           </div>
         )}
       </nav>
@@ -66,39 +79,40 @@ function Header() {
         <span className="text-white font-semibold tracking-widest text-sm uppercase">
           Job Portal
         </span>
-        {dashboard === "dashboard" ? (
-          <NavigationMenu>
-            <NavigationMenuList>
-              {Object.entries(dashboardnav).map(([label, path], index) => (
-                <NavigationMenuItem key={index}>
-                  <a
-                    href={path}
-                    target={label === "docs" ? "_blank" : undefined}
-                    rel={label === "docs" ? "noopener noreferrer" : undefined}
-                  >
-                    {label}
-                  </a>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        ) : (
-          <NavigationMenu>
-            <NavigationMenuList>
-              {Object.entries(nav).map(([label, path], index) => (
-                <NavigationMenuItem key={index}>
-                  <Link
-                    href={path}
-                    target={label === "docs" ? "_blank" : undefined}
-                    rel={label === "docs" ? "noopener noreferrer" : undefined}
-                  >
-                    {label}
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        )}
+        <div className="flex items-center gap-4">
+          {dashboard === "dashboard" ? (
+            <NavigationMenu>
+              <NavigationMenuList>
+                {Object.entries(dashboardnav).map(([label, path], index) => (
+                  <NavigationMenuItem key={index}>
+                    <a href={path}>{label}</a>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          ) : (
+            <NavigationMenu>
+              <NavigationMenuList>
+                {Object.entries(nav).map(([label, path], index) => (
+                  <NavigationMenuItem key={index}>
+                    <Link href={path}>{label}</Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          )}
+
+          {dashboard === "dashboard" && (
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-1.5 text-white/60 hover:text-white text-xs uppercase tracking-widest transition-colors"
+              aria-label="Sign out"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              Sign out
+            </button>
+          )}
+        </div>
       </div>
     </header>
   );
