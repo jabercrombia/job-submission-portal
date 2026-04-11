@@ -27,6 +27,7 @@ export default function UploadPage(data: {
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState("");
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,14 +75,15 @@ export default function UploadPage(data: {
         body: formPayload,
       });
 
-
-
       if (res.ok) {
         setShowModal(true);
+        setError("");
       } else {
+        setError("Submission failed. Please try again.");
       }
     } catch (err) {
       console.error(err);
+      setError("Unable to reach the server. Please try again later.");
     }
 
     setLoading(false);
@@ -139,6 +141,7 @@ export default function UploadPage(data: {
       <Button type="submit" disabled={loading}>
         {loading ? "Saving..." : "Submit"}
       </Button>
+      {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
     </form>
     <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <h2 className="text-xl font-bold mb-2">Submission Successful</h2>

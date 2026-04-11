@@ -1,12 +1,20 @@
 @import '../_variables.scss';
 
 th {
-    background-color: $grey !important;
+  background-color: #f8fafc !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 td {
-    font-size: 12px !important;
+  font-size: 13px !important;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9 !important;
 }
-tr:hover {
-    background-color: $grey;
+
+tr:hover td {
+  background-color: #f8fafc;
 }
