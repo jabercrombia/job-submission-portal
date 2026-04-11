@@ -66,7 +66,7 @@ export default function Home() {
               <Link href="#apply"><Button>Apply</Button></Link>
             </div>
           </div>
-          <Markdown>{entries.description}</Markdown>
+          <Markdown>{entries.description.replace(/\\n/g, '\n')}</Markdown>
           <p className="text-sm text-gray-500 pt-4">Posting will be closed on {formatUTCToMMDDYYYY(entries.expiration)}</p>
           <hr className='mt-3'/>
           <section id="apply" className='right'>Apply Now</section>

@@ -1,6 +1,76 @@
 title,description,category,expiration,job_posting_key
-Frontend Engineer,"## About the Role\n\nWe are looking for a skilled Frontend Engineer to join our team.\n\n## Responsibilities\n\n- Build and maintain responsive web applications\n- Collaborate with designers and backend engineers\n- Write clean, maintainable code\n\n## Requirements\n\n- 3+ years of experience with React\n- Proficiency in TypeScript and Tailwind CSS\n- Experience with Next.js",Engineering,2025-12-31T00:00:00.000Z,fe-engineer-001
-Backend Engineer,"## About the Role\n\nWe need a Backend Engineer to help scale our infrastructure.\n\n## Responsibilities\n\n- Design and maintain RESTful APIs\n- Manage PostgreSQL databases\n- Optimize query performance\n\n## Requirements\n\n- 3+ years of experience with Node.js or Python\n- Experience with Supabase or PostgreSQL\n- Familiarity with cloud platforms (AWS, GCP, or Vercel)",Engineering,2025-12-31T00:00:00.000Z,be-engineer-001
-UX Designer,"## About the Role\n\nWe are hiring a UX Designer to craft intuitive user experiences.\n\n## Responsibilities\n\n- Create wireframes, prototypes, and high-fidelity mockups\n- Conduct user research and usability testing\n- Collaborate with engineers during implementation\n\n## Requirements\n\n- Portfolio demonstrating end-to-end design process\n- Proficiency in Figma\n- Experience with design systems",Design,2025-11-30T00:00:00.000Z,ux-designer-001
-Marketing Manager,"## About the Role\n\nLead our marketing efforts and grow brand awareness.\n\n## Responsibilities\n\n- Develop and execute marketing campaigns\n- Manage social media and content strategy\n- Analyze campaign performance metrics\n\n## Requirements\n\n- 4+ years of marketing experience\n- Experience with SEO and paid advertising\n- Strong written communication skills",Marketing,2025-11-30T00:00:00.000Z,mkt-manager-001
-Data Scientist,"## About the Role\n\nJoin our data team to turn raw data into actionable insights.\n\n## Responsibilities\n\n- Build and maintain ML models\n- Analyze large datasets to identify trends\n- Present findings to stakeholders\n\n## Requirements\n\n- Proficiency in Python and scikit-learn\n- Experience with SQL and data visualization\n- Familiarity with NLP or recommendation systems",Data Science,2025-12-15T00:00:00.000Z,data-sci-001
+Frontend Engineer,"## About the Role
+
+We are looking for a skilled Frontend Engineer to join our team.
+
+## Responsibilities
+
+- Build and maintain responsive web applications
+- Collaborate with designers and backend engineers
+- Write clean, maintainable code
+
+## Requirements
+
+- 3+ years of experience with React
+- Proficiency in TypeScript and Tailwind CSS
+- Experience with Next.js",Engineering,2027-12-31T00:00:00.000Z,fe-engineer-001
+Backend Engineer,"## About the Role
+
+We need a Backend Engineer to help scale our infrastructure.
+
+## Responsibilities
+
+- Design and maintain RESTful APIs
+- Manage PostgreSQL databases
+- Optimize query performance
+
+## Requirements
+
+- 3+ years of experience with Node.js or Python
+- Experience with Supabase or PostgreSQL
+- Familiarity with cloud platforms (AWS, GCP, or Vercel)",Engineering,2027-12-31T00:00:00.000Z,be-engineer-001
+UX Designer,"## About the Role
+
+We are hiring a UX Designer to craft intuitive user experiences.
+
+## Responsibilities
+
+- Create wireframes, prototypes, and high-fidelity mockups
+- Conduct user research and usability testing
+- Collaborate with engineers during implementation
+
+## Requirements
+
+- Portfolio demonstrating end-to-end design process
+- Proficiency in Figma
+- Experience with design systems",Design,2027-11-30T00:00:00.000Z,ux-designer-001
+Marketing Manager,"## About the Role
+
+Lead our marketing efforts and grow brand awareness.
+
+## Responsibilities
+
+- Develop and execute marketing campaigns
+- Manage social media and content strategy
+- Analyze campaign performance metrics
+
+## Requirements
+
+- 4+ years of marketing experience
+- Experience with SEO and paid advertising
+- Strong written communication skills",Marketing,2027-11-30T00:00:00.000Z,mkt-manager-001
+Data Scientist,"## About the Role
+
+Join our data team to turn raw data into actionable insights.
+
+## Responsibilities
+
+- Build and maintain ML models
+- Analyze large datasets to identify trends
+- Present findings to stakeholders
+
+## Requirements
+
+- Proficiency in Python and scikit-learn
+- Experience with SQL and data visualization
+- Familiarity with NLP or recommendation systems",Data Science,2027-12-15T00:00:00.000Z,data-sci-001
