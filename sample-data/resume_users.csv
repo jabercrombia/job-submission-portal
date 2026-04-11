@@ -1,0 +1,6 @@
+firstName,lastName,email,phone,linkedIn,website,pdf_path,match_score,category,title
+Jane,Smith,jane.smith@email.com,555-111-2222,https://linkedin.com/in/janesmith,https://janesmith.dev,resume-uploads/jane-smith-resume.pdf,0.87,Engineering,Frontend Engineer
+Marcus,Johnson,marcus.j@email.com,555-333-4444,https://linkedin.com/in/marcusjohnson,,resume-uploads/marcus-johnson-resume.pdf,0.74,Engineering,Backend Engineer
+Priya,Patel,priya.patel@email.com,555-555-6666,https://linkedin.com/in/priyapatel,https://priyapatel.design,resume-uploads/priya-patel-resume.pdf,0.91,Design,UX Designer
+Carlos,Rivera,carlos.r@email.com,555-777-8888,https://linkedin.com/in/carlosrivera,,resume-uploads/carlos-rivera-resume.pdf,0.65,Marketing,Marketing Manager
+Aisha,Williams,aisha.w@email.com,555-999-0000,https://linkedin.com/in/aishawilliams,https://aishawilliams.io,resume-uploads/aisha-williams-resume.pdf,0.82,Data Science,Data Scientist

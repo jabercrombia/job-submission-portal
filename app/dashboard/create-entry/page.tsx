@@ -15,7 +15,7 @@ export default function FormPage() {
   const [category,setCategory] = useState('');
 
   type Category = {
-    category: string;
+    category_name: string;
   };
   const [jobCategory,setJobCategory] = useState<Category[]>([]);
 
@@ -23,9 +23,9 @@ export default function FormPage() {
       const fetchEntry = async () => {
         const res = await fetch('/api/categories');
         const data = await res.json();
-        setJobCategory(data);
+        setJobCategory(Array.isArray(data) ? data : []);
       }
-  
+
       fetchEntry();
     }, []);
 
@@ -73,8 +73,8 @@ export default function FormPage() {
             required
             className="w-full border rounded p-2"
           >
-            {jobCategory.map((elem : {category : string}, index: number)=>(
-              <option key={index}>{elem.category}</option>
+            {jobCategory.map((elem, index) => (
+              <option key={index}>{elem.category_name}</option>
             ))}
             </select>
         </div>
