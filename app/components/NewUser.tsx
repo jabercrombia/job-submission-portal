@@ -28,10 +28,6 @@ export default function UploadPage(data: {
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState("");
-<<<<<<< HEAD
-
-=======
->>>>>>> 44f9967 (main)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -65,11 +61,6 @@ export default function UploadPage(data: {
 
       if (res.ok) {
         setShowModal(true);
-<<<<<<< HEAD
-        setError("");
-      } else {
-        setError("Submission failed. Please try again.");
-=======
         setFormData({
           firstName: "",
           lastName: "",
@@ -86,7 +77,6 @@ export default function UploadPage(data: {
       } else {
         const result = await res.json();
         setError(result.error || "Submission failed. Please try again.");
->>>>>>> 44f9967 (main)
       }
     } catch (err) {
       console.error(err);
@@ -98,61 +88,6 @@ export default function UploadPage(data: {
 
   return (
     <>
-<<<<<<< HEAD
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <Input
-        name="firstName"
-        placeholder="First Name"
-        value={formData.firstName}
-        onChange={handleChange}
-        required
-      />
-      <Input
-        name="lastName"
-        placeholder="Last Name"
-        value={formData.lastName}
-        onChange={handleChange}
-        required
-      />
-      <Input
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        type="email"
-      />
-      <Input
-        name="phone"
-        placeholder="Phone"
-        value={formData.phone}
-        onChange={handleChange}
-      />
-      <Input
-        name="linkedIn"
-        placeholder="LinkedIn"
-        value={formData.linkedIn}
-        onChange={handleChange}
-      />
-      <Input
-        name="website"
-        placeholder="Website/Portfolio"
-        value={formData.website}
-        onChange={handleChange}
-      />
-      <Input
-        type="file"
-        accept="application/pdf"
-        onChange={handleFileChange}
-        ref={fileInputRef}
-        required
-      />
-      <Button type="submit" disabled={loading}>
-        {loading ? "Saving..." : "Submit"}
-      </Button>
-      {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
-    </form>
-    <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-=======
       <form onSubmit={handleSubmit} className="space-y-4">
         <Input
           name="firstName"
@@ -206,7 +141,6 @@ export default function UploadPage(data: {
         </Button>
       </form>
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
->>>>>>> 44f9967 (main)
         <h2 className="text-xl font-bold mb-2">Submission Successful</h2>
         <p>Thank you for submitting your resume. We&apos;ll be in touch!</p>
         <Button onClick={() => setShowModal(false)} className="mt-4">
