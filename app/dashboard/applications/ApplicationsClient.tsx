@@ -13,7 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import UserModal from "@/app/components/ux/UserModal";
-import { ExternalLink } from "lucide-react";
+import { Eye } from "lucide-react";
 
 import "../../../styles/components/table.scss";
 
@@ -178,8 +178,8 @@ export default function Home() {
                 }) => (
                   <TableRow key={user.id}>
                     <TableCell>
-                      <ExternalLink
-                        className="cursor-pointer"
+                      <Eye
+                        className="cursor-pointer text-slate-500 hover:text-indigo-600 transition-colors"
                         onClick={() => openModal(user)}
                       />
                     </TableCell>

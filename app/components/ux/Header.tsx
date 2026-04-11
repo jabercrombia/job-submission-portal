@@ -22,14 +22,14 @@ function Header() {
     applications: "/dashboard/applications",
     listings: "/dashboard/listings",
     "new posting": "/dashboard/create-entry",
-    docs: "https://project-docs-amber.vercel.app/docs/job-submission-portal/listings",
   };
 
   const nav = {
     home: "/",
     dashboard: "/dashboard/listings",
-    docs: "https://project-docs-amber.vercel.app/docs/job-submission-portal/listings",
   };
+
+  const activeNav = dashboard === "dashboard" ? dashboardnav : nav;
 
   return (
     <header>
@@ -43,8 +43,8 @@ function Header() {
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
-
         {isOpen && (
+<<<<<<< HEAD
           <div className="mt-4 flex flex-col gap-3 pb-2">
             {Object.entries(dashboard === "dashboard" ? dashboardnav : nav).map(([label, path], index) => (
               <Link
@@ -57,12 +57,22 @@ function Header() {
               >
                 {label}
               </Link>
+=======
+          <div className="mt-4 space-y-2">
+            {Object.entries(activeNav).map(([label, path], index) => (
+              <div key={index}>
+                <Link href={path} onClick={() => setIsOpen(false)}>
+                  {label}
+                </Link>
+              </div>
+>>>>>>> 44f9967 (main)
             ))}
           </div>
         )}
       </nav>
 
       {/* Desktop Navigation */}
+<<<<<<< HEAD
       <div className="container mx-auto hidden md:flex items-center justify-between" style={{ padding: "0 24px" }}>
         <span className="text-white font-semibold tracking-widest text-sm uppercase">
           Job Portal
@@ -100,6 +110,18 @@ function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         )}
+=======
+      <div className="container mx-auto hidden md:block">
+        <NavigationMenu>
+          <NavigationMenuList>
+            {Object.entries(activeNav).map(([label, path], index) => (
+              <NavigationMenuItem key={index}>
+                <Link href={path}>{label}</Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+>>>>>>> 44f9967 (main)
       </div>
     </header>
   );
